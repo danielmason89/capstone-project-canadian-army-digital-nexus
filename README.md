@@ -8,11 +8,12 @@ This application can be used across an organization for idea management and prio
 ## Why you used the technologies you used?
 I chose to use the React framework, Next.js, alongside a postgresql database, and graphql with an apollo client and prisma orm to abstaract some of the set-up that would be otherwise required for working with plain react. I made use of these to query the database in a more efficient way were this app to continue being used and further build out in reaction to the inefficiencies of a REST-Api
 
-## Some of the challenges you faced and features you hope to implement in the future:
+## Some of the challenges faced and features to implement in the future:
  - Figuring out the right framework to use, and weghing the positives against the negatives
  - Looking over the database landscape and figuring out what type of database to use; relational versus document:
  the difference being that MongoDB is a non-relational database, while PostgreSQL is a relational database. While NoSQL databases work on storing data in key-value pairs  as one record, relational databases store data on different tables.
  - Looking over the different React based component libraries and choosing one that best fit the needs of the application.
+ - Having an organizations idea or a organic datset displayed in the dashboard
 
 ## Needs: 
  - internet-facing web applications, that’s mobile friendly
