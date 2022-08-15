@@ -28,21 +28,48 @@ a {
 
 .taskContainer.chakra-stack {
   border: 1px solid rgb(233, 233, 231);
+  border-radius: 3px;
 }
 
-.taskContainer .chakra-stack {
+.taskContainer .chakra-text {
   border-radius: 3px;
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 0.5rem 0 0.5rem 1rem;
   cursor: pointer;
-  box-shadow: rgb(15 15 15/ 10%) 0px 0px 0px 1px,
-    rgb(15 15 15 / 10%) 0px 2px 4px;
+  box-shadow: 0px 0px 15px 11px #7971714b;
 }
 
 .taskContainer .chakra-text:hover {
-  background-color: rgba(55, 53, 47, 0.08);
+  background-color: #7b8282;
 }
 
 .flex-container {
   display: flex;
   justify-content: space-between;
+}
+
+.add-wrapper {
+  /* background-color: inherit !important; */
+  /* border-color: inherit !important; */
+  /* color: #6f7782 !important; */
+  background-color: rgba(21, 7, 38, 0.04) !important;
+  border: none;
+}
+
+.add-wrapper:hover {
+  background-color: rgba(21, 7, 38, 0.04);
+  background-color: rgba(25, 7, 38, 0.04) !important;
+  /* border-color: rgba(21, 7, 38, 0.04) !important; */
+  color: #bcc3cc !important;
+  border: none;
+}
+
+.is-empty {
+  border-radius: 8px;
+  background-color: rgba(21, 7, 38, 0.04) !important;
+  background: linear-gradient(
+    180deg,
+    rgba(232, 236, 238, 0.5),
+    rgba(232, 236, 238, 0) 100%
+  );
+  flex: 1 1 100%;
 }

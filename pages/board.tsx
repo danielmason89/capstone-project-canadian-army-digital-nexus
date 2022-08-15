@@ -28,7 +28,7 @@ const Board = () => {
 
     return (
         // <Flex direction="column" pt={3} height="100vh">
-        <Container h='80px' maxWidth="100%" >
+        <Container pt="2rem" h='100%' maxWidth="100%" >
             <Heading fontSize="2.5rem">
                 Project Title
             </Heading>

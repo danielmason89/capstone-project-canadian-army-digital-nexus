@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Heading, Text, ButtonGroup, Spacer, Flex, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Button, Heading, Text, ButtonGroup, Spacer, Flex, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Link from "next/link";
 
