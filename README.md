@@ -6,7 +6,7 @@ A governance application that enables people from across an organization at all 
 This application can be used across an organization for idea management and prioritization over time.
 
 ## Why you used the technologies you used?
-I chose to use the React framework, Next.js, alongside a postgresql database, and graphql with an apollo client and prisma orm to abstaract some of the set-up that would be otherwise required for working with plain react. I made use of these to query the database in a more efficient way were this app to continue being used and further build out in reaction to the inefficiencies of a REST-Api
+I chose to use the React framework, Next.js, alongside a Postgresql database, and Apollo Graphql and Prisma orm to abstaract some of the set-up that would be otherwise required for working with plain react. I made use of these to query the database in a more efficient way were this app to continue being used and further build out in reaction to the inefficiencies of a REST-Api
 
 ## Some of the challenges faced and features to implement in the future:
  - Figuring out the right framework to use, and weghing the positives against the negatives
