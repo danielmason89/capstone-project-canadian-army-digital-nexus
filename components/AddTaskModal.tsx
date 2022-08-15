@@ -43,7 +43,7 @@ const AddTaskModal = ({ boardCategory }: { boardCategory: String; }) => {
             <Button onClick={onOpen} width="20vw" >
                 <FontAwesomeIcon icon={faPlus} style={{ "color": "#ffffff", "margin": ".5rem" }}
                 />
-                Add Tasks
+                Add Ideas
             </Button >
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />

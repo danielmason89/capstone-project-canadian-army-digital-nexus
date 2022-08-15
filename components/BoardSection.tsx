@@ -29,6 +29,7 @@ const BoardSection: React.FC<BoardSectionProps> = ({ title, tasks }) => {
                                 description={task.description}
                                 id={task.id}
                                 key={task.id}
+                                boardCategory={title}
                             />
                         )
                     })
