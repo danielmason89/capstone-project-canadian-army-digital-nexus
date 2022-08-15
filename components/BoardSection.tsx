@@ -36,7 +36,9 @@ const BoardSection: React.FC<BoardSectionProps> = ({ title, tasks }) => {
                 {tasks.length > 0 &&
                     <Flex>
                         <Button className="add-wrapper" width="100%">
-                            <AddTaskModal />
+                            <AddTaskModal
+                                boardCategory={title}
+                            />
                         </Button>
 
                     </Flex>
@@ -45,7 +47,9 @@ const BoardSection: React.FC<BoardSectionProps> = ({ title, tasks }) => {
                     tasks.length === 0 &&
                     <Flex className="is-empty" flexDirection="column">
                         <Button className="add-wrapper">
-                            <AddTaskModal />
+                            <AddTaskModal
+                                boardCategory={title}
+                            />
                         </Button>
                     </Flex>
                 }
