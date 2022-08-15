@@ -2,7 +2,7 @@
 
 A governance application that enables people from across an organization at all levels to submit innovation ideas for subsequent prioritization and resourcing.
 
-##What your application does:
+## What your application does:
 This application can be used across an organization for idea management and prioritization over time.
 
 ## Why you used the technologies you used?
