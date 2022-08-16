@@ -1,5 +1,6 @@
 ## Canadian Army Digital Nexus - Capstone Project
 
+## Introduction
 A governance application that enables people from across an organization at all levels to submit innovation ideas for subsequent prioritization and resourcing.
 
 ## What your application does:
@@ -14,6 +15,25 @@ I chose to use the React framework, Next.js, alongside a Postgresql database, an
  the difference being that MongoDB is a non-relational database, while PostgreSQL is a relational database. While NoSQL databases work on storing data in key-value pairs  as one record, relational databases store data on different tables.
  - Looking over the different React based component libraries and choosing one that best fit the needs of the application.
  - Having an organizations idea or a organic datset displayed in the dashboard
+
+## Prerequisites
+Node and npm are installed for this application. Here are the versions I'll be used while making this tutorial:
+
+$ node --version
+v16.13.2
+
+$ npm --version
+8.1.2
+Installing npm adds two commands to the system—npm and npx—both of which I'll be using while making the app.
+
+## In order to install the app onto your local machine and add to it, the steps to take are:
+
+1. Create a folder to house your version of the project.
+2. Go to the GitHub repo page, and copy the string => thhttps://github.com/danielmason89/capstone-project-canadian-army-digital-nexus.git, and have it be preceded with    git clone.
+3. Once the project has been cloned to a local machine, the next step would be to preform an npm i or npm install.
+4. Then to get thing up an running on your local machine, there are dev scripts that can be ran to run the application in development.
+5. When making pushes during development make sure to work in a separate branch since each update will impact the app since it is live,.
+
 
 ## Needs: 
  - internet-facing web applications, that’s mobile friendly
