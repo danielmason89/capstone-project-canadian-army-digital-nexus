@@ -29,7 +29,7 @@ const AddTaskModal = ({ boardCategory }: { boardCategory: String; }) => {
         }
     })
 
-    const handleTaskCreate = (e) => {
+    const handleTaskCreate = (e: { preventDefault: () => void; }) => {
         e.preventDefault()
         createTask({
             variables: {

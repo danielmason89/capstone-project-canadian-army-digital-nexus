@@ -36,7 +36,7 @@ const Board = () => {
     const sections: Array<String> = ["Backlog", "In-Progress", "Review", "Done"];
     const [updateTask] = useMutation(UpdateTaskMutation);
 
-    const onDragEnd = (result) => {
+    const onDragEnd = (result: { destination: any; source: any; draggableId: any; }) => {
         const { destination, source, draggableId } = result;
         if (!destination) {
             return;

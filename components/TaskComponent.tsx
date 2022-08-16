@@ -95,10 +95,6 @@ const TaskComponent: React.FC<Task> = ({ title, description, id, boardCategory, 
                                     <FormLabel>Description</FormLabel>
                                     <Input type="text" value={taskDescription} onChange={(e) => { setTaskDescription(e.target.value); }} placeholder='Description' />
                                 </FormControl>
-                                {/* <FormControl mb="3" isRequired>
-                                    <FormLabel>Suggest Idea</FormLabel>
-                                    <Input value={taskCreate} onChange={(e) => { setTaskCreate(e.target.value); }} placeholder='Idea' />
-                                </FormControl> */}
                             </form>
                         </ModalBody>
                         <ModalFooter>
