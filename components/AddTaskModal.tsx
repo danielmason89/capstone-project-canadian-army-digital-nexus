@@ -70,7 +70,7 @@ const AddTaskModal = ({ boardCategory }: { boardCategory: String; }) => {
                         </form>
                     </ModalBody>
                     <ModalFooter>
-                        <Button variant={variant} colorScheme='teal' backgroundColor="teal" type="submit" onClose={onClose} form="new-form">Submit</Button>
+                        <Button variant={variant} colorScheme='teal' backgroundColor="teal" type="submit" form="new-form">Submit</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal >
