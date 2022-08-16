@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { gql, useQuery, useMutation } from "@apollo/client";
-import { Container, Heading } from "@chakra-ui/react";
+import { Center, Container, Heading, Spinner } from "@chakra-ui/react";
 import BoardSection from "../components/BoardSection";
 import { DragDropContext } from "react-beautiful-dnd";
 
@@ -53,7 +53,14 @@ const Board = () => {
         })
     }
 
-    if (loading) return <p>Loading...</p>
+    if (loading) return <Center h='100px'><Spinner
+        thickness='4px'
+        speed='0.65s'
+        emptyColor='gray.200'
+        color='blue.500'
+        size='xl'
+        className="loader"
+    /></Center>
     if (error) return <p>Error...</p>
 
     return (
