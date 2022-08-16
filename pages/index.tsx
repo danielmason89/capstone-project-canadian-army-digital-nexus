@@ -5,8 +5,10 @@ import type { NextPage } from 'next'
 const Home: NextPage = () => {
 
   return (
-    <Flex>
-    </Flex>
+    <div className="main">
+      <Flex  >
+      </Flex >
+    </div>
   )
 }
 
