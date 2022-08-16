@@ -22,12 +22,17 @@ a {
   box-sizing: border-box;
 }
 
+.container {
+  padding: 0 2rem;
+}
+
+
 .nav {
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.06);
 }
 
 .taskContainer.chakra-stack {
-  border: 1px solid rgb(233, 233, 231);
+  border: 1px solid rgb(89, 89, 81);
   border-radius: 3px;
 }
 
@@ -59,7 +64,7 @@ a {
   background-color: rgba(21, 7, 38, 0.04);
   background-color: rgba(25, 7, 38, 0.04) !important;
   /* border-color: rgba(21, 7, 38, 0.04) !important; */
-  color: #bcc3cc !important;
+  color: #717478 !important;
   border: none;
 }
 

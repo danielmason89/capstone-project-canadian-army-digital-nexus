@@ -1,13 +1,7 @@
 import React, { useState } from 'react'
 import {
     Box,
-    Flex,
-    Heading,
-    Text,
     Stack,
-    Container,
-    Avatar,
-    useColorModeValue,
     Modal,
     Button,
     ModalContent,
@@ -19,11 +13,14 @@ import {
     FormLabel,
     ModalFooter,
     ModalBody,
-    useDisclosure
+    useDisclosure,
+    ButtonGroup,
+    useBreakpointValue
 } from '@chakra-ui/react';
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { Draggable } from 'react-beautiful-dnd';
 
 const UpdateTaskMutation = gql`
 mutation UpdateTask($id: String!, $title: String!, $description: String!, $status: String!, $userId: String) {
@@ -44,16 +41,16 @@ mutation DeleteTaskMutation($id: String!) {
 `
 
 
-const TaskComponent: React.FC<Task> = ({ title, description, id, boardCategory }) => {
+const TaskComponent: React.FC<Task> = ({ title, description, id, boardCategory, index }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [taskTitle, setTaskTitle] = useState(title);
     const [taskDescription, setTaskDescription] = useState(description);
     const [taskCreate, setTaskCreate] = useState("");
-
+    const variant = useBreakpointValue({ base: "outline", md: "solid" })
     const [updateTask, { data, loading, error }] = useMutation(UpdateTaskMutation);
     const [deleteTask] = useMutation(DeleteTaskMutation);
 
-    const handleTaskUpdate = (e) => {
+    const handleTaskUpdate = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         updateTask({
             variables: {
@@ -76,40 +73,42 @@ const TaskComponent: React.FC<Task> = ({ title, description, id, boardCategory }
     return (
         <>
             <Stack className='taskContainer' mb="2rem">
-                <Button onClick={onOpen}  >
-                    {title}
-                </Button >
-                <Modal isOpen={isOpen} onClose={onClose}>
+                <Draggable draggableId={id} index={index}>
+                    {(provided) => (<Button onClick={onOpen} {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                        <Box>{title}</Box>
+                    </Button>)}
+                </Draggable>
+                <Modal isCentered isOpen={isOpen} onClose={onClose} motionPreset='slideInBottom' >
                     <ModalOverlay />
                     <ModalContent>
                         <ModalHeader>
                             <ModalCloseButton />
-                            Update Idea Form
-                        </ModalHeader >
+                            Update Idea
+                        </ModalHeader>
                         <ModalBody>
                             <form id="new-form" onSubmit={handleTaskUpdate}>
                                 <FormControl mb="3" isRequired>
                                     <FormLabel>Title</FormLabel>
-                                    <Input type="text" value={taskTitle} onChange={(e) => { setTaskTitle(e.target.value) }} placeholder='Full Name' />
+                                    <Input type="text" value={taskTitle} onChange={(e) => { setTaskTitle(e.target.value); }} placeholder='Full Name' />
                                 </FormControl>
                                 <FormControl mb="3" isRequired>
                                     <FormLabel>Description</FormLabel>
-                                    <Input type="text" value={taskDescription} onChange={(e) => { setTaskDescription(e.target.value) }} placeholder='Description' />
+                                    <Input type="text" value={taskDescription} onChange={(e) => { setTaskDescription(e.target.value); }} placeholder='Description' />
                                 </FormControl>
-                                <FormControl mb="3" isRequired>
+                                {/* <FormControl mb="3" isRequired>
                                     <FormLabel>Suggest Idea</FormLabel>
-                                    <Input value={taskCreate} onChange={(e) => { setTaskCreate(e.target.value) }} placeholder='Idea' />
-                                </FormControl>
+                                    <Input value={taskCreate} onChange={(e) => { setTaskCreate(e.target.value); }} placeholder='Idea' />
+                                </FormControl> */}
                             </form>
                         </ModalBody>
                         <ModalFooter>
-                            <Flex alignItems="center">
-                                <Button variant='ghost' colorScheme='teal' color="white" backgroundColor="teal" type="submit" form="new-form">Update</Button>
-                                <FontAwesomeIcon icon={faTrashAlt} style={{ "padding": "2px" }} size="lg" onClick={handleTaskDelete} />
-                            </Flex>
+                            <ButtonGroup gap="2">
+                                <Button variant={variant} backgroundColor="teal" colorScheme='teal' type="submit" form="new-form" onClick={handleTaskDelete}><FontAwesomeIcon icon={faTrashAlt} style={{ "padding": "4px" }} size="lg" />Delete</Button>
+                                <Button variant={variant} backgroundColor="teal" colorScheme='teal' type="submit" form="new-form">Update</Button>
+                            </ButtonGroup>
                         </ModalFooter>
                     </ModalContent>
-                </Modal >
+                </Modal>
             </Stack>
         </>
     )

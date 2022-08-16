@@ -1,9 +1,9 @@
-import "../styles/globals.css";
+import "../styles/global-styles.css"
 import 'normalize.css';
 import type { AppProps } from "next/app";
 import { ApolloProvider } from "@apollo/client";
 import apolloClient from "../lib/apollo";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, extendTheme, type ThemeConfig } from "@chakra-ui/react"
 import Layout from "../components/layout"
 
 const colors = {
@@ -14,12 +14,25 @@ const colors = {
   },
 }
 
-const theme = extendTheme({ colors });
+const breakpoints = {
+  sm: '30em',
+  md: '48em',
+  lg: '62em',
+  xl: '80em',
+  '2xl': '96em',
+}
+
+const config: ThemeConfig = {
+  initialColorMode: 'light',
+  useSystemColorMode: false,
+}
+
+
+const theme = extendTheme({ colors, breakpoints, config });
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ApolloProvider client={apolloClient}>
-
       <ChakraProvider resetCss theme={theme}>
         <Layout>
           <Component {...pageProps} />

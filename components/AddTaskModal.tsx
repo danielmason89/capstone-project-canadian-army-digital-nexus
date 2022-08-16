@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Button, FormControl, FormLabel, FormHelperText, Input, Modal, ModalBody, ModalCloseButton, ModalOverlay, ModalFooter, ModalHeader, Text, Textarea, useDisclosure, ModalContent, Box } from "@chakra-ui/react";
+import { Button, FormControl, FormLabel, FormHelperText, Input, Modal, ModalBody, ModalCloseButton, useBreakpointValue, ModalOverlay, ModalFooter, ModalHeader, Text, Textarea, useDisclosure, ModalContent, Box } from "@chakra-ui/react";
 import { gql, useMutation, useQuery } from "@apollo/client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +17,7 @@ mutation CreateTask($id: String, $title: String!, $description: String!, $status
 const AddTaskModal = ({ boardCategory }: { boardCategory: String; }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const [taskTitle, setTaskTitle] = useState("");
+    const variant = useBreakpointValue({ base: "outline", md: "solid" })
     const [taskDescription, setTaskDescription] = useState("");
     const [taskCreate, setTaskCreate] = useState("");
 
@@ -41,11 +42,11 @@ const AddTaskModal = ({ boardCategory }: { boardCategory: String; }) => {
     return (
         <>
             <Button onClick={onOpen} width="20vw" >
-                <FontAwesomeIcon icon={faPlus} style={{ "color": "#ffffff", "margin": ".5rem" }}
+                <FontAwesomeIcon icon={faPlus} style={{ "color": "#918686", "margin": ".5rem" }}
                 />
                 Add Ideas
             </Button >
-            <Modal isOpen={isOpen} onClose={onClose}>
+            <Modal isCentered isOpen={isOpen} onClose={onClose} motionPreset='slideInBottom'>
                 <ModalOverlay />
                 <ModalContent>
                     <ModalHeader>
@@ -69,7 +70,7 @@ const AddTaskModal = ({ boardCategory }: { boardCategory: String; }) => {
                         </form>
                     </ModalBody>
                     <ModalFooter>
-                        <Button variant='ghost' colorScheme='teal' color="white" backgroundColor="teal" type="submit" form="new-form">Submit</Button>
+                        <Button variant={variant} colorScheme='teal' backgroundColor="teal" type="submit" onClose={onClose} form="new-form">Submit</Button>
                     </ModalFooter>
                 </ModalContent>
             </Modal >

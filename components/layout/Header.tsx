@@ -9,7 +9,7 @@ const Header = () => {
     return (
         <Flex className="nav" as="nav" align="center" justify="space-between" wrap="wrap" pr={5} pb={6}>
             <Heading as="h1" p="4" size="lg" letterSpacing="-.05rem">
-                Digital Nexus: Idea Management
+                Canada Army - Digital Nexus: Idea Management
             </Heading>
             <Spacer />
             <Flex direction="column" background={formBackground} p={6} mt={4} rounded={6}>
